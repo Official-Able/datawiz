@@ -99,7 +99,7 @@ ANYMAIL = {
     "RESEND_API_KEY": os.getenv("RESEND_API_KEY"),
 }
 EMAIL_BACKEND = "anymail.backends.resend.EmailBackend"
-DEFAULT_FROM_EMAIL = "Datawizable Updates <updates@datawizable.com>"
+DEFAULT_FROM_EMAIL = "Datawizable Updates <updates@updates.datawizable.com>"
 NOTIFICATION_EMAIL = "info@datawizable.com"
 
 CORS_ALLOW_ALL_ORIGINS = True # Change in production

@@ -1,0 +1,35 @@
+# Dependency directories
+node_modules/
+backend/venv/
+__pycache__/
+*.pyc
+
+# Next.js build artifacts
+.next/
+out/
+build/
+
+# Backend database and logs
+db.sqlite3
+*.log
+
+# Environment variables (Crucial for security)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Docker logs
+docker-compose.override.yml
+
+# IDE files
+.vscode/
+.idea/
+.artifacts/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

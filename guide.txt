@@ -1,0 +1,911 @@
+Datawizable should not look like a software company website.
+
+Most tech websites say:
+
+We build websites
+We build apps
+We do UI/UX
+We do AI
+We do automation
+
+The problem is every freelancer, agency, and computer shop says the same thing.
+
+Instead:
+
+Datawizable should position itself as a Digital Transformation & Decision Intelligence Company that solves business bottlenecks through technology.
+
+The client should think:
+
+"These people understand business first and technology second."
+
+That immediately separates you from traditional software houses.
+
+DATAWIZABLE 2.0
+Brand Positioning
+Current Position
+
+Digital solutions company.
+
+Premium Position
+
+Datawizable
+Decision Intelligence & Digital Transformation Partner
+
+We help organizations identify operational bottlenecks, redesign processes, and build intelligent digital systems that improve performance, efficiency, and growth.
+
+New Tagline Options
+
+Instead of:
+
+Smart Solutions. Real Results.
+
+Consider:
+
+Option 1 (Premium)
+
+Transforming Complexity Into Clarity.
+
+Option 2 (Executive)
+
+Business Intelligence. Engineered.
+
+Option 3 (Powerful)
+
+We Decode Problems. We Engineer Solutions.
+
+Option 4 (My Favorite)
+
+Understanding Before Building.
+
+This aligns perfectly with:
+
+We Listen.
+We Understand.
+We Build What Fits You.
+
+WEBSITE STRUCTURE
+
+The website should feel like:
+
+Apple
+Stripe
+McKinsey
+Linear
+
+Clean.
+
+Elegant.
+
+Minimal.
+
+Confident.
+
+No flashy animations everywhere.
+
+Premium motion.
+
+SITE MAP
+1. Home
+2. Solutions
+3. Industries
+4. Case Studies
+5. Academy
+6. About
+7. Contact
+HOME PAGE
+HERO SECTION
+
+Fullscreen.
+
+Dark background.
+
+Premium animation.
+
+Red + Navy Blue.
+
+Headline
+Every Business Has Bottlenecks.
+We Build The Systems That Remove Them.
+
+Subtext:
+
+Datawizable helps businesses and institutions streamline operations, automate workflows, leverage AI, and build digital products that accelerate growth.
+
+Buttons:
+
+[Book a Consultation]
+
+[View Our Work]
+
+Right side:
+
+Animated ecosystem showing:
+
+Business Problem
+↓
+Analysis
+↓
+Strategy
+↓
+Technology
+↓
+Growth
+
+Not random coding graphics.
+
+TRUST BAR
+
+Below hero.
+
+Trusted by Businesses,
+Educational Institutions,
+Financial Organizations
+and Growing Teams.
+
+WHAT WE DO
+
+Instead of services.
+
+Call it:
+
+Solutions We Engineer
+Digital Transformation
+
+Modernize outdated processes and workflows.
+
+Business Automation
+
+Eliminate repetitive manual operations.
+
+AI-Powered Operations
+
+Integrate intelligence into everyday processes.
+
+Custom Platforms
+
+Web and mobile applications built around your business.
+
+Decision Intelligence
+
+Dashboards, analytics and actionable insights.
+
+Learning & Capacity Building
+
+Professional technology and digital skills training.
+
+PROBLEM → SOLUTION SECTION
+
+This is what makes Datawizable different.
+
+We Don't Sell Websites
+
+We Solve Problems.
+
+Business Challenge	Datawizable Solution
+Slow manual processes	Workflow automation
+Poor visibility	Decision dashboards
+Disconnected systems	Integrated platforms
+Low productivity	Intelligent automation
+Data chaos	Centralized information systems
+OUR APPROACH
+
+Premium Timeline
+
+Discover
+
+Understand operations.
+
+Diagnose
+
+Identify bottlenecks.
+
+Design
+
+Create tailored solutions.
+
+Develop
+
+Build and deploy.
+
+Optimize
+
+Measure and improve.
+
+INDUSTRIES PAGE
+
+Instead of saying we work for everyone.
+
+Create focus sectors.
+
+Financial Services
+
+Banks
+Microfinance
+Cooperatives
+
+Education
+
+Schools
+Universities
+Training Institutions
+
+Government
+
+Public sector digitalization.
+
+NGOs
+
+Reporting
+Monitoring
+Impact Measurement
+
+SMEs
+
+Growth and automation.
+
+CASE STUDIES PAGE
+
+Extremely important.
+
+Even if projects are internal.
+
+Show them professionally.
+
+Examples:
+
+Digital Cooperative Platform
+
+Reduced loan processing time by 65%
+
+CBT Examination Platform
+
+Handled 10,000+ assessments
+
+Human Trafficking Reporting System
+
+Improved case tracking and reporting
+
+Learning Ecosystem
+
+AI-powered personalized learning
+
+(Lumora)
+
+DATAWIZACADEMY
+
+Separate section.
+
+Not just training.
+
+Building Future-Ready Professionals
+
+Tracks:
+
+Data Analytics
+AI & Automation
+Software Engineering
+Digital Transformation
+Professional IT Skills
+ABOUT PAGE
+
+Avoid:
+
+"We are a software company."
+
+Instead:
+
+Why We Exist
+
+Organizations face growing complexity.
+
+Many adopt technology without solving the underlying problem.
+
+Datawizable exists to bridge business understanding and technology execution.
+
+We listen first.
+We understand deeply.
+Then we engineer solutions that fit.
+
+CONTACT PAGE
+
+Premium.
+
+Not ordinary.
+
+Let's Discuss Your Challenge
+
+Tell us:
+
+What is slowing your organization down?
+What process needs improvement?
+What outcome are you looking for?
+
+Then consultation form.
+
+VISUAL DESIGN SYSTEM
+Colors
+
+Primary
+
+Navy Blue
+
+#071C3F
+
+Accent Red
+
+#D62839
+
+White
+
+#FFFFFF
+
+Soft Gray
+
+#E5E7EB
+
+TYPOGRAPHY
+
+Headings:
+
+Inter
+
+or
+
+Plus Jakarta Sans
+
+Body:
+
+Inter
+
+ANIMATION STYLE
+
+Use:
+
+Framer Motion
+Smooth scrolling
+Floating gradient lights
+Subtle parallax
+Count-up metrics
+Premium hover states
+
+Avoid:
+
+❌ Flying icons
+
+❌ Excessive particles
+
+❌ Tech clichés
+
+❌ Random coding screens
+
+WEBSITE TECHNOLOGY STACK
+
+For production:
+
+Frontend
+
+Next.js 15
+TypeScript
+Tailwind CSS
+Framer Motion
+
+Backend
+
+Django
+Django REST Framework
+
+Database
+
+PostgreSQL
+
+Infrastructure
+
+Docker
+
+Nginx
+
+DigitalOcean / Hetzner VPS
+
+GitHub Actions CI/CD
+
+MASTER PROMPT FOR YOUR CODE AGENT
+
+Build a world-class corporate website for Datawizable, a premium Decision Intelligence and Digital Transformation company. The design should combine the elegance of Apple, the trust of Stripe, the authority of McKinsey, and the modern experience of Linear. Use a dark navy-blue and red theme with premium typography, smooth animations, responsive design, accessibility compliance, SEO optimization, and production-ready architecture. Focus on business outcomes, operational transformation, decision intelligence, automation, AI integration, and custom digital platforms rather than generic software development services. The website must feel executive-level, enterprise-grade, and globally competitive.
+
+A few questions before I design the complete page-by-page wireframe and component architecture for the development agent:
+
+Do you want the site to support multiple countries and currencies from day one?
+Will clients be able to book consultations directly on the website?
+Do you want a client portal/dashboard integrated into the main website later?
+Should DatawizAcademy have its own LMS inside the same platform or as a separate subdomain (academy.datawizable.com)?
+Do you want the website optimized primarily for:
+Enterprise organizations
+SMEs
+Educational institutions
+A mix of all three?
+
+Your answer will determine the final architecture and homepage conversion strategy.
+
+Do you want the site to support multiple countries and currencies from day one? yes
+Will clients be able to book consultations directly on the website? yes
+Do you want a client portal/dashboard integrated into the main website later? yes
+Should DatawizAcademy have its own LMS inside the same platform or as a separate subdomain (academy.datawizable.com)? it can be a saparate sundoamin whic can still be rendered inside the side by refereinf the link
+Do you want the website optimized primarily for:
+Enterprise organizations
+SMEs
+Educational institutions
+A mix of all three? mix
+
+Perfect. Based on your answers, I would not build Datawizable as a simple marketing website.
+
+I would build it as a Digital Business Platform from day one.
+
+The public website is only the first layer.
+
+DATAWIZABLE ECOSYSTEM ARCHITECTURE
+Layer 1: Corporate Website
+
+Purpose:
+
+Brand authority
+Lead generation
+Consultation booking
+Case studies
+Service showcase
+Academy marketing
+
+Visitors arrive here first.
+
+Layer 2: Client Portal
+
+Future-ready.
+
+Clients can:
+
+Track projects
+Submit requests
+View invoices
+Access deliverables
+Download reports
+Communicate with project teams
+
+URL:
+
+portal.datawizable.com
+
+Layer 3: DatawizAcademy
+
+Separate subdomain.
+
+URL:
+
+academy.datawizable.com
+
+Integrated into main navigation.
+
+Can be embedded seamlessly.
+
+Users should feel they never left Datawizable.
+
+WEBSITE INFORMATION ARCHITECTURE
+DATAWIZABLE
+│
+├── Home
+├── Solutions
+│   ├── Digital Transformation
+│   ├── Process Automation
+│   ├── Decision Intelligence
+│   ├── AI Integration
+│   ├── Custom Platforms
+│   └── Digital Training
+│
+├── Industries
+│   ├── Financial Services
+│   ├── Education
+│   ├── Government
+│   ├── NGOs
+│   └── SMEs
+│
+├── Case Studies
+│
+├── Academy
+│
+├── Resources
+│   ├── Blog
+│   ├── Insights
+│   ├── Whitepapers
+│
+├── About
+│
+├── Contact
+│
+├── Book Consultation
+│
+└── Client Portal
+THE REAL POSITIONING
+
+Most companies say:
+
+We build websites.
+
+Datawizable should say:
+
+We engineer operational transformation.
+
+Most visitors don't want software.
+
+They want:
+
+Faster operations
+Lower costs
+Better visibility
+Increased revenue
+Improved customer experience
+
+Technology is simply the tool.
+
+HOMEPAGE WIREFRAME
+SECTION 1
+Hero
+
+Full screen.
+
+Background:
+
+Animated digital ecosystem.
+
+Subtle.
+
+Not flashy.
+
+Headline:
+
+Every Organization Has Bottlenecks.
+We Engineer Systems That Remove Them.
+
+Subheadline:
+
+Datawizable helps businesses, institutions, and governments streamline operations, automate workflows, unlock insights, and scale through intelligent digital transformation.
+
+Buttons:
+
+Primary
+
+BOOK CONSULTATION
+
+Secondary
+
+VIEW CASE STUDIES
+
+Right Side
+
+Animated diagram:
+
+Challenge
+   ↓
+Discovery
+   ↓
+Strategy
+   ↓
+Technology
+   ↓
+Growth
+SECTION 2
+WHO WE WORK WITH
+
+Cards
+
+Financial Services
+
+Banks
+Microfinance
+Cooperatives
+
+Education
+
+Schools
+Universities
+Training Centres
+
+Government
+
+Digital Service Delivery
+
+NGOs
+
+Impact & Reporting Systems
+
+SMEs
+
+Growth & Automation
+
+SECTION 3
+We Don't Sell Technology.
+We Solve Business Problems.
+
+Interactive comparison.
+
+Manual Processes
+
+↓
+
+Workflow Automation
+
+Disconnected Systems
+
+↓
+
+Integrated Platforms
+
+Poor Visibility
+
+↓
+
+Decision Intelligence Dashboards
+
+Customer Friction
+
+↓
+
+Digital Experiences
+
+SECTION 4
+Solutions We Engineer
+
+Premium cards.
+
+Digital Transformation
+
+Redesign processes for efficiency and scale.
+
+Decision Intelligence
+
+Transform data into actionable insights.
+
+AI-Powered Operations
+
+Introduce intelligence into daily workflows.
+
+Enterprise Platforms
+
+Custom web systems tailored to operations.
+
+Mobile Solutions
+
+Applications that keep teams productive anywhere.
+
+Business Automation
+
+Reduce repetitive work and improve consistency.
+
+Capacity Building
+
+Future-ready workforce development.
+
+SECTION 5
+Featured Success Stories
+
+Very important.
+
+Even before you have many clients.
+
+Use projects.
+
+Cooperative Management Platform
+
+Automated loan management and compliance tracking.
+
+CBT Assessment Platform
+
+Large-scale examination delivery and result analytics.
+
+Human Trafficking Reporting System
+
+Improved case management and stakeholder reporting.
+
+Intelligent Learning Ecosystem
+
+AI-powered personalized learning experience.
+
+SECTION 6
+The Datawizable Method
+
+This becomes your signature framework.
+
+Listen
+
+Understand business realities.
+
+Diagnose
+
+Identify bottlenecks.
+
+Design
+
+Create tailored solutions.
+
+Deliver
+
+Build and deploy.
+
+Optimize
+
+Continuously improve outcomes.
+
+SECTION 7
+Global Ready
+
+Since you want multi-country support.
+
+Display:
+
+Nigeria
+Ghana
+Kenya
+South Africa
+UK
+Canada
+United States
+
+Features:
+
+✓ Multi-currency
+
+✓ International payments
+
+✓ Remote consultations
+
+✓ Global project delivery
+
+SECTION 8
+DatawizAcademy
+
+Separate section.
+
+Headline:
+
+Building Africa's Next Generation of Digital Professionals
+
+Programs:
+
+Software Engineering
+AI & Automation
+Data Analytics
+Decision Intelligence
+Professional IT Skills
+
+Button:
+
+Explore Academy
+
+SECTION 9
+Consultation CTA
+
+Premium.
+
+Large section.
+
+Let's Discuss Your Challenge
+
+Not:
+
+"Contact Us"
+
+Not:
+
+"Request a Quote"
+
+Ask:
+
+What is slowing your organization down?
+
+Button:
+
+Book Strategic Consultation
+
+CONSULTATION SYSTEM
+
+Visitors should be able to:
+
+Select service
+Select country
+Select timezone
+Select meeting type
+Select date
+Select time
+
+Integration:
+
+Google Calendar
+Microsoft Calendar
+Zoom
+Google Meet
+
+Automatic confirmation emails.
+
+Automatic reminders.
+
+MULTI-CURRENCY STRATEGY
+
+Support from day one:
+
+NGN
+USD
+GBP
+EUR
+CAD
+
+Automatic location detection.
+
+Manual currency switcher.
+
+SEO POSITIONING
+
+Avoid ranking only for:
+
+Web design company
+Software developer
+
+Target:
+
+Digital transformation consulting
+Business process automation
+AI integration services
+Custom enterprise software
+Decision intelligence solutions
+Workflow automation consulting
+Educational technology solutions
+Financial technology solutions
+DATABASE DESIGN (PRODUCTION READY)
+
+Core apps:
+
+accounts
+website
+services
+industries
+case_studies
+consultations
+crm
+academy
+blog
+resources
+payments
+portal
+notifications
+analytics
+WHAT I WOULD REMOVE FROM THE CURRENT FLYERS
+
+The flyers are good visually.
+
+But I would remove:
+
+❌ UI/UX Design
+
+❌ Web Application Development
+
+❌ Mobile App Development
+
+❌ Bulk Email Services
+
+These sound like commodity services.
+
+Replace with:
+
+✅ Digital Transformation
+
+✅ Decision Intelligence
+
+✅ Business Process Automation
+
+✅ AI-Powered Operations
+
+✅ Enterprise Platforms
+
+✅ Digital Learning Solutions
+
+✅ Capacity Building & Training
+
+This instantly moves Datawizable from looking like a "tech vendor" to looking like a "strategic transformation partner."
+
+My next recommendation would be to create a complete enterprise-grade design system (colors, typography, spacing, components, animations, page layouts, dashboard UI, and AI-agent build specification) so your coding agent can build the website exactly the way a top-tier agency would.

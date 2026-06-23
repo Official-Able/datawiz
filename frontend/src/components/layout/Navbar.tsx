@@ -45,11 +45,11 @@ export function Navbar() {
     >
       <div className="flex h-full items-center justify-between px-2">
         <Link href="/" className="flex items-center group h-full">
-          <div className="h-[58px] px-6 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-white/[0.12] group-hover:border-white/20">
+          <div className="h-[58px] px-6 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:bg-white/25 group-hover:border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
             <img
               src="/logo.png"
               alt="Datawizable"
-              className="h-10 md:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+              className="h-10 md:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] brightness-105"
               style={{ minWidth: '120px' }}
             />
           </div>

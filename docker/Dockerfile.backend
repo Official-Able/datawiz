@@ -20,5 +20,11 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project
 COPY backend/ .
 
-# Command to run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "core.wsgi:application"]
+# Install netcat for database check
+RUN apt-get update && apt-get install -y netcat-openbsd && rm -rf /var/lib/apt/lists/*
+
+# Make entrypoint executable
+RUN chmod +x entrypoint.sh
+
+# Entrypoint
+ENTRYPOINT ["/app/entrypoint.sh"]

@@ -66,11 +66,8 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* Right Section - Login + CTA */}
-        <div className="hidden lg:flex items-center gap-6">
-          <Link href="/login" className="text-[15px] font-semibold text-white/85 hover:text-white transition-all">
-            Login
-          </Link>
+        {/* Right Section - CTA */}
+        <div className="hidden lg:flex items-center">
           <Link href="/contact">
             <Button
               className="h-11 px-6 rounded-full bg-[#E11D48] hover:bg-[#BE123C] text-white font-semibold transition-all shadow-lg shadow-accent/20 border-none"
@@ -110,7 +107,6 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="mt-4 flex flex-col gap-4 border-t border-white/10 pt-6">
-                 <Link href="/login" className="text-lg font-semibold text-white/70" onClick={() => setIsMobileMenuOpen(false)}>Login</Link>
                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                     <Button className="w-full h-14 text-lg font-bold rounded-2xl bg-[#E11D48] border-none">
                       Schedule Call

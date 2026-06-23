@@ -9,10 +9,52 @@ import { cn } from "@/lib/utils";
 export function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#071C3F] pt-48 pb-20 px-6 flex items-center">
-      {/* Background Animated Elements */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-accent/10 blur-[120px] animate-pulse" />
-        <div className="absolute right-1/4 bottom-1/4 h-96 w-96 rounded-full bg-blue-600/5 blur-[120px] animate-pulse delay-1000" />
+      {/* Premium Subtle Background Animation */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Slow Drifting Gradient Orb 1 */}
+        <motion.div
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute -left-20 -top-20 h-[500px] w-[500px] rounded-full bg-accent/5 blur-[120px]"
+        />
+
+        {/* Slow Drifting Gradient Orb 2 */}
+        <motion.div
+          animate={{
+            x: [0, -80, 0],
+            y: [0, 100, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute right-1/4 top-1/3 h-[600px] w-[600px] rounded-full bg-blue-600/5 blur-[140px]"
+        />
+
+        {/* Slow Drifting Gradient Orb 3 */}
+        <motion.div
+          animate={{
+            x: [0, 60, 0],
+            y: [0, -60, 0],
+          }}
+          transition={{
+            duration: 22,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          className="absolute left-1/3 bottom-0 h-[450px] w-[450px] rounded-full bg-accent/5 blur-[100px]"
+        />
+
+        {/* Subtle Grid Pattern Overlay */}
+        <div className="absolute inset-0 opacity-[0.15] [background-image:linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:100px_100px]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl w-full">

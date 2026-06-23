@@ -43,14 +43,16 @@ export function Navbar() {
         isScrolled && "top-4 bg-[#071C3F]/95"
       )}
     >
-      <div className="flex h-full items-center justify-between px-8">
-        <Link href="/" className="flex items-center">
-          <img
-            src="/logo.png"
-            alt="Datawizable"
-            className="h-10 md:h-14 w-auto object-contain brightness-110"
-            style={{ minWidth: '140px' }}
-          />
+      <div className="flex h-full items-center justify-between px-2">
+        <Link href="/" className="flex items-center group h-full">
+          <div className="h-[58px] px-6 rounded-full bg-white/[0.08] backdrop-blur-md border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-white/[0.12] group-hover:border-white/20">
+            <img
+              src="/logo.png"
+              alt="Datawizable"
+              className="h-10 md:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.02]"
+              style={{ minWidth: '120px' }}
+            />
+          </div>
         </Link>
 
         {/* Desktop Navigation - Centered */}

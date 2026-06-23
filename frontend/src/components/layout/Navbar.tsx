@@ -48,7 +48,8 @@ export function Navbar() {
           <img
             src="/logo.png"
             alt="Datawizable"
-            className="h-12 w-auto"
+            className="h-10 md:h-14 w-auto object-contain brightness-110"
+            style={{ minWidth: '140px' }}
           />
         </Link>
 
@@ -70,9 +71,9 @@ export function Navbar() {
         <div className="hidden lg:flex items-center">
           <Link href="/contact">
             <Button
-              className="h-11 px-6 rounded-full bg-[#E11D48] hover:bg-[#BE123C] text-white font-semibold transition-all shadow-lg shadow-accent/20 border-none"
+              className="h-11 px-8 rounded-full bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold transition-all shadow-lg shadow-accent/20 border-none whitespace-nowrap"
             >
-              Schedule Call
+              Schedule Strategy Call
             </Button>
           </Link>
         </div>
@@ -109,7 +110,7 @@ export function Navbar() {
               <div className="mt-4 flex flex-col gap-4 border-t border-white/10 pt-6">
                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                     <Button className="w-full h-14 text-lg font-bold rounded-2xl bg-[#E11D48] border-none">
-                      Schedule Call
+                      Schedule Strategy Call
                     </Button>
                  </Link>
               </div>

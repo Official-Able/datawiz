@@ -155,13 +155,13 @@ export function ChatForm() {
               className="flex-1 px-5 py-3 md:py-4 rounded-xl md:rounded-2xl bg-gray-100 border-none text-[#071C3F] placeholder:text-gray-400 focus:ring-2 focus:ring-accent outline-none transition-all text-sm md:text-base"
             />
             <Button onClick={handleSend} className="rounded-xl md:rounded-2xl w-12 h-12 md:w-14 md:h-14 p-0 shrink-0 bg-accent hover:bg-accent/90 border-none">
-              <Send size={18} md:size={20} />
+              <Send className="w-4 h-4 md:w-5 md:h-5" />
             </Button>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <Button onClick={handleWhatsApp} className="bg-[#25D366] hover:bg-[#128C7E] text-white py-5 md:py-6 rounded-xl md:rounded-2xl flex gap-2 font-bold border-none text-sm md:text-base">
-              <WhatsApp size={18} md:size={20} />
+              <WhatsApp className="w-4 h-4 md:w-5 md:h-5" />
               Chat on WhatsApp
             </Button>
             <Button onClick={handleEmailSubmit} className="py-5 md:py-6 rounded-xl md:rounded-2xl font-bold bg-[#071C3F] hover:bg-[#071C3F]/90 border-none text-white text-sm md:text-base">
@@ -171,7 +171,7 @@ export function ChatForm() {
               onClick={() => { setStep(0); setMessages([{ id: "1", text: "Hi! I'm your Datawizable Strategy Assistant. What's your name?", sender: "bot" }]); }}
               className="col-span-full text-center text-[10px] md:text-xs text-gray-400 flex items-center justify-center gap-2 mt-1 md:mt-2"
             >
-              <RefreshCw size={10} md:size={12} /> Start Over
+              <RefreshCw className="w-3 h-3 md:w-4 md:h-4" /> Start Over
             </button>
           </div>
         )}

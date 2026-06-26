@@ -67,38 +67,51 @@ export function ChatForm() {
   };
 
   const handleEmailSubmit = async () => {
+    setIsTyping(true);
     try {
-      await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/leads/`, {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}/api/leads/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name: formData.name,
           company: formData.org,
           message: formData.challenge,
-          email: "chat-user@datawizable.com" // Placeholder for chat users
+          email: "chat-user@datawizable.com" // This triggers the backend notification
         }),
       });
-      alert("Strategy request submitted via email! We will contact you shortly.");
+
+      if (response.ok) {
+        setIsTyping(false);
+        setMessages((prev) => [...prev, {
+          id: Date.now().toString(),
+          text: "Perfect! Your strategy request has been submitted. Our engineering team will contact you at the provided organization details shortly.",
+          sender: "bot"
+        }]);
+      } else {
+        throw new Error("Failed to submit");
+      }
     } catch (error) {
+      setIsTyping(false);
+      alert("Something went wrong with the email submission. Please try WhatsApp for immediate contact.");
       console.error("Error submitting:", error);
     }
   };
 
   return (
-    <div className="flex flex-col h-[600px] w-full max-w-2xl mx-auto bg-white rounded-[2.5rem] shadow-2xl border border-gray-100 overflow-hidden">
+    <div className="flex flex-col h-[550px] md:h-[600px] w-full max-w-2xl mx-auto bg-white rounded-[2rem] md:rounded-[2.5rem] shadow-2xl border border-gray-200 overflow-hidden">
       {/* Header */}
-      <div className="bg-primary p-6 flex items-center gap-4 text-white">
-        <div className="h-12 w-12 rounded-2xl bg-accent flex items-center justify-center shadow-lg">
-          <MessageSquare size={24} />
+      <div className="bg-[#071C3F] p-5 md:p-6 flex items-center gap-4 text-white">
+        <div className="h-10 w-10 md:h-12 md:w-12 rounded-xl md:rounded-2xl bg-accent flex items-center justify-center shadow-lg shrink-0">
+          <MessageSquare size={20} className="md:w-6 md:h-6" />
         </div>
         <div>
-          <h3 className="font-bold text-lg">Strategy Assistant</h3>
-          <p className="text-white/60 text-xs uppercase tracking-widest font-bold">Always Active</p>
+          <h3 className="font-bold text-base md:text-lg">Strategy Assistant</h3>
+          <p className="text-white/60 text-[10px] md:text-xs uppercase tracking-widest font-bold">Always Active</p>
         </div>
       </div>
 
       {/* Messages area */}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto p-8 space-y-6 scroll-smooth bg-gray-50/50">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto p-5 md:p-8 space-y-6 scroll-smooth bg-gray-50">
         <AnimatePresence>
           {messages.map((m) => (
             <motion.div
@@ -108,9 +121,9 @@ export function ChatForm() {
               className={`flex ${m.sender === "bot" ? "justify-start" : "justify-end"}`}
             >
               <div className={cn(
-                "max-w-[80%] p-5 rounded-2xl text-[15px] leading-relaxed shadow-sm",
+                "max-w-[85%] md:max-w-[80%] p-4 md:p-5 rounded-2xl text-[14px] md:text-[15px] leading-relaxed shadow-sm",
                 m.sender === "bot"
-                  ? "bg-white text-primary border border-gray-100 rounded-tl-none"
+                  ? "bg-white text-[#071C3F] border border-gray-100 rounded-tl-none"
                   : "bg-accent text-white rounded-tr-none font-medium shadow-accent/20"
               )}>
                 {m.text}
@@ -119,7 +132,7 @@ export function ChatForm() {
           ))}
           {isTyping && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex justify-start">
-              <div className="bg-white p-4 rounded-2xl border border-gray-100 flex gap-1">
+              <div className="bg-white p-3 md:p-4 rounded-2xl border border-gray-100 flex gap-1">
                 <span className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce" />
                 <span className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:0.2s]" />
                 <span className="w-1.5 h-1.5 bg-gray-300 rounded-full animate-bounce [animation-delay:0.4s]" />
@@ -130,7 +143,7 @@ export function ChatForm() {
       </div>
 
       {/* Input / Action area */}
-      <div className="p-6 bg-white border-t border-gray-100">
+      <div className="p-4 md:p-6 bg-white border-t border-gray-100">
         {step < steps.length ? (
           <div className="flex gap-2">
             <input
@@ -138,27 +151,27 @@ export function ChatForm() {
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={(e) => e.key === "Enter" && handleSend()}
-              placeholder="Type your answer..."
-              className="flex-1 px-6 py-4 rounded-2xl bg-gray-50 border-none focus:ring-2 focus:ring-accent outline-none transition-all"
+              placeholder="Type here..."
+              className="flex-1 px-5 py-3 md:py-4 rounded-xl md:rounded-2xl bg-gray-100 border-none text-[#071C3F] placeholder:text-gray-400 focus:ring-2 focus:ring-accent outline-none transition-all text-sm md:text-base"
             />
-            <Button onClick={handleSend} className="rounded-2xl w-14 h-14 p-0">
-              <Send size={20} />
+            <Button onClick={handleSend} className="rounded-xl md:rounded-2xl w-12 h-12 md:w-14 md:h-14 p-0 shrink-0 bg-accent hover:bg-accent/90 border-none">
+              <Send size={18} md:size={20} />
             </Button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Button onClick={handleWhatsApp} className="bg-[#25D366] hover:bg-[#128C7E] text-white py-6 rounded-2xl flex gap-2 font-bold">
-              <WhatsApp size={20} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <Button onClick={handleWhatsApp} className="bg-[#25D366] hover:bg-[#128C7E] text-white py-5 md:py-6 rounded-xl md:rounded-2xl flex gap-2 font-bold border-none text-sm md:text-base">
+              <WhatsApp size={18} md:size={20} />
               Chat on WhatsApp
             </Button>
-            <Button onClick={handleEmailSubmit} className="py-6 rounded-2xl font-bold">
+            <Button onClick={handleEmailSubmit} className="py-5 md:py-6 rounded-xl md:rounded-2xl font-bold bg-[#071C3F] hover:bg-[#071C3F]/90 border-none text-white text-sm md:text-base">
               Schedule via Email
             </Button>
             <button
               onClick={() => { setStep(0); setMessages([{ id: "1", text: "Hi! I'm your Datawizable Strategy Assistant. What's your name?", sender: "bot" }]); }}
-              className="col-span-full text-center text-xs text-gray-400 flex items-center justify-center gap-2 mt-2"
+              className="col-span-full text-center text-[10px] md:text-xs text-gray-400 flex items-center justify-center gap-2 mt-1 md:mt-2"
             >
-              <RefreshCw size={12} /> Start Over
+              <RefreshCw size={10} md:size={12} /> Start Over
             </button>
           </div>
         )}

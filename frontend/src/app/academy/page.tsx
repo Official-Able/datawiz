@@ -1,160 +1,55 @@
-"use client";
-
-import React, { useState } from "react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, ChartNoAxesCombined, Code2, Users, Workflow } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { PremiumCard } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
-import { motion, AnimatePresence } from "framer-motion";
-import { X, Sparkles, BookOpen, Users, Brain, Workflow, Terminal } from "lucide-react";
+import { PageIntro } from "@/components/layout/PageIntro";
 
-const courses = [
-  {
-    title: "Data Analytics",
-    desc: "Master the art of decision intelligence through data.",
-    icon: Brain,
-    impact: "Industry Standard"
-  },
-  {
-    title: "AI & Automation",
-    desc: "Learn to engineer intelligent workflows.",
-    icon: Workflow,
-    impact: "Future Ready"
-  },
-  {
-    title: "Software Engineering",
-    desc: "Build enterprise-grade digital systems.",
-    icon: Terminal,
-    impact: "Full Stack"
-  },
-  {
-    title: "Digital Transformation",
-    desc: "Strategic technology leadership for the modern era.",
-    icon: Sparkles,
-    impact: "Executive"
-  },
-  {
-    title: "Workplace Toolkit",
-    desc: "Master the essential soft skills for the modern professional environment.",
-    icon: Users,
-    impact: "Essential"
-  },
+export const metadata: Metadata = {
+  title: "Academy | Datawizable",
+  description: "Explore Datawizable's areas of digital skills and organizational learning.",
+};
+
+const areas = [
+  { title: "Data and analytics", text: "Build the confidence to interpret information and ask better questions of the numbers.", icon: ChartNoAxesCombined },
+  { title: "AI and automation", text: "Understand where automation helps, where human judgment matters, and how to work responsibly with AI.", icon: Workflow },
+  { title: "Software and digital systems", text: "Connect product thinking and technical skills to the problems teams actually face.", icon: Code2 },
+  { title: "Workplace capability", text: "Strengthen the communication, collaboration, and decision habits that make technology useful.", icon: Users },
 ];
 
 export default function AcademyPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="pt-48 pb-32 px-6">
-        <div className="mx-auto max-w-7xl">
-          <div className="text-center mb-24">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent font-bold text-sm uppercase tracking-widest mb-6"
-            >
-              <BookOpen size={16} />
-              Capacity Building
-            </motion.div>
-            <h1 className="text-5xl md:text-8xl font-extrabold text-[#071C3F] mb-8 tracking-tighter">
-              Datawiz<span className="text-accent">Academy</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium">
-              Building Africa's Next Generation of Digital Professionals through
-              industry-first training and engineering masterclasses.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {courses.map((course, idx) => (
-              <motion.div
-                key={course.title}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: idx * 0.1 }}
-                className="h-full"
-              >
-                <div className="group h-full relative p-8 rounded-[2.5rem] bg-gray-50 border border-gray-100 flex flex-col justify-between hover:bg-[#071C3F] transition-all duration-500 hover:-translate-y-2">
-                  <div>
-                    <div className="flex justify-between items-start mb-8">
-                      <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-sm group-hover:bg-accent transition-colors duration-500">
-                        <course.icon className="text-[#071C3F] group-hover:text-white transition-colors duration-500" size={32} />
-                      </div>
-                      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-accent py-1 px-3 bg-accent/10 rounded-full group-hover:bg-white/10 group-hover:text-white">
-                        {course.impact}
-                      </span>
-                    </div>
-                    <h3 className="text-3xl font-bold text-[#071C3F] mb-4 group-hover:text-white transition-colors duration-500">
-                      {course.title}
-                    </h3>
-                    <p className="text-lg text-gray-600 mb-8 leading-relaxed group-hover:text-white/70 transition-colors duration-500">
-                      {course.desc}
-                    </p>
+      <main>
+        <PageIntro tone="blue" eyebrow="DatawizAcademy / Learn by doing" title="Learn the skills behind better systems." description="Learning should connect to real work. We bring digital skills, practical judgment, and organisational needs together." />
+        <section className="px-5 py-16 sm:px-8 sm:py-24">
+          <div className="mx-auto max-w-7xl">
+            <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
+              <h2 className="font-display text-3xl font-bold text-[#171C28] sm:text-4xl">Areas of focus</h2>
+              <p className="max-w-lg text-gray-600">We shape learning around the audience, its current capabilities, and the change it needs to make.</p>
+            </div>
+            <div className="grid border-t border-gray-200 md:grid-cols-2">
+              {areas.map((area, index) => {
+                const Icon = area.icon;
+                return (
+                  <div key={area.title} className="border-b border-gray-200 py-9 md:pr-12">
+                    <div className="mb-7 flex items-center justify-between text-primary"><Icon size={30} strokeWidth={1.7} aria-hidden="true" /><span className="text-sm font-bold">0{index + 1}</span></div>
+                    <h3 className="font-display text-xl font-bold text-[#171C28] sm:text-2xl">{area.title}</h3>
+                    <p className="mt-3 max-w-md leading-relaxed text-gray-600">{area.text}</p>
                   </div>
-                  <Button
-                    variant="outline"
-                    className="w-full h-16 rounded-2xl border-2 border-[#071C3F]/10 text-[#071C3F] font-black text-lg group-hover:border-white/20 group-hover:text-white group-hover:bg-white/5 transition-all duration-500"
-                    onClick={() => setIsModalOpen(true)}
-                  >
-                    Learn More
-                  </Button>
-                </div>
-              </motion.div>
-            ))}
+                );
+              })}
+            </div>
           </div>
-        </div>
+        </section>
+        <section className="bg-[#171C28] px-5 py-16 text-white sm:px-8 sm:py-20">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-end justify-between gap-8">
+            <div><p className="mb-4 text-sm font-bold uppercase text-white/60">For teams and individuals</p><h2 className="max-w-2xl font-display text-3xl font-bold sm:text-4xl">Tell us what your people need to learn.</h2></div>
+            <Link href="/contact" className="inline-flex min-h-12 items-center gap-2 bg-white px-6 py-3 font-semibold text-[#171C28]">Discuss training <ArrowRight size={18} /></Link>
+          </div>
+        </section>
       </main>
-
-      {/* Coming Soon Modal */}
-      <AnimatePresence>
-        {isModalOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#071C3F]/60 backdrop-blur-md"
-          >
-            <motion.div
-              initial={{ scale: 0.9, opacity: 0, y: 20 }}
-              animate={{ scale: 1, opacity: 1, y: 0 }}
-              exit={{ scale: 0.9, opacity: 0, y: 20 }}
-              className="bg-white rounded-[3rem] p-10 md:p-16 max-w-xl w-full relative shadow-[0_32px_80_rgba(0,0,0,0.3)] text-center border border-gray-100"
-            >
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="absolute right-8 top-8 w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:bg-[#071C3F] hover:text-white transition-all"
-              >
-                <X size={24} />
-              </button>
-
-              <div className="w-24 h-24 bg-accent/10 rounded-[2rem] flex items-center justify-center mx-auto mb-10">
-                <Sparkles className="text-accent" size={48} />
-              </div>
-
-              <h2 className="text-4xl md:text-5xl font-black text-[#071C3F] mb-6">Coming Soon</h2>
-              <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-                We are currently engineering a world-class learning experience for this track.
-                Our team is finalizing the curriculum to meet global industry standards.
-              </p>
-
-              <div className="flex flex-col gap-4">
-                <Button
-                  onClick={() => setIsModalOpen(false)}
-                  className="w-full h-18 text-xl font-bold rounded-2xl bg-accent hover:bg-accent/90 shadow-xl shadow-accent/20"
-                >
-                  Notify Me
-                </Button>
-                <p className="text-sm text-gray-400 font-bold uppercase tracking-widest">
-                  Launch Q3 2026
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <Footer />
     </div>
   );

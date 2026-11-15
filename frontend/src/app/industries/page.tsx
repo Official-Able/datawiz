@@ -1,51 +1,45 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { PremiumCard } from "@/components/ui/Card";
-import { Landmark, GraduationCap } from "lucide-react";
+import { loadCaseStudies } from "@/lib/portfolio";
+import { PageIntro } from "@/components/layout/PageIntro";
 
-const industries = [
-  {
-    title: "Financial Services",
-    icon: Landmark,
-    problem: "Manual overhead and repayment disputes.",
-    solution: "We built a fully digital Cooperative Management System. Operations are automated, members track their wallets in real-time, and loan repayments are integrated directly—eliminating arguments and manual tracking forever.",
-  },
-  {
-    title: "Education",
-    icon: GraduationCap,
-    problem: "Cheating and supervision costs in remote exams.",
-    solution: "Our UTME-style examination platform allows students to test from anywhere. Through intelligent engineering, we eliminated the need for physical supervision while maintaining 100% integrity against cheating.",
-  },
-];
+export const metadata: Metadata = {
+  title: "Industries | Datawizable",
+  description: "Explore the sectors represented in Datawizable's published work.",
+};
 
-export default function IndustriesPage() {
+export default async function IndustriesPage() {
+  const studies = await loadCaseStudies();
+  const sectors = [...new Set(studies?.map((study) => study.sector) ?? [])];
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="pt-48 pb-32 px-6">
-        <div className="mx-auto max-w-7xl">
-          <h1 className="text-6xl font-extrabold text-primary mb-12">Deep Sector Expertise</h1>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {industries.map((i) => (
-              <div key={i.title} className="space-y-8">
-                <div className="flex items-center gap-4">
-                  <i.icon className="h-10 w-10 text-accent" />
-                  <h2 className="text-4xl font-bold text-primary">{i.title}</h2>
-                </div>
-                <PremiumCard className="bg-primary text-white border-none p-10">
-                  <div className="mb-6">
-                    <span className="text-accent font-bold uppercase tracking-widest text-sm">The Challenge</span>
-                    <p className="text-xl mt-2">{i.problem}</p>
+      <main>
+        <PageIntro tone="blue" eyebrow="Industries / Context matters" title="The sector changes. The need to understand the work does not." description="We learn each setting's processes, constraints, and people before shaping a digital response." />
+        <section className="px-5 py-16 sm:px-8 sm:py-24">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="mb-10 font-display text-2xl font-bold text-[#171C28] sm:text-3xl">Sectors in our published work</h2>
+            {studies === null ? (
+              <p role="status" className="border-t border-gray-200 py-9 text-gray-600">Sector information is temporarily unavailable.</p>
+            ) : sectors.length === 0 ? (
+              <p className="border-t border-gray-200 py-9 text-gray-600">Our project profiles are being reviewed. Contact us to discuss your sector.</p>
+            ) : (
+              <div className="border-t border-gray-200">
+                {sectors.map((sector, index) => (
+                  <div key={sector} className="grid gap-3 border-b border-gray-200 py-7 sm:grid-cols-[3rem_1fr_auto] sm:items-center sm:gap-8">
+                    <span className="text-sm font-bold text-primary">0{index + 1}</span>
+                    <h3 className="font-display text-xl font-bold text-[#171C28] sm:text-2xl">{sector}</h3>
+                    <Link href="/case-studies" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">See work <ArrowRight size={17} /></Link>
                   </div>
-                  <div>
-                    <span className="text-accent font-bold uppercase tracking-widest text-sm">Our Solution</span>
-                    <p className="text-lg mt-2 text-gray-300 leading-relaxed">{i.solution}</p>
-                  </div>
-                </PremiumCard>
+                ))}
               </div>
-            ))}
+            )}
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
     </div>

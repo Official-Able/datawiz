@@ -14,4 +14,4 @@ class ServiceSerializer(serializers.ModelSerializer):
 class LeadSerializer(serializers.ModelSerializer):
     class Meta:
         model = Lead
-        fields = '__all__'
+        exclude = ('notification_sent_at',)

@@ -19,10 +19,10 @@ const config: Config = {
         }
       },
       colors: {
-        primary: "#071C3F", // Navy Blue
-        accent: "#D62839", // Accent Red
+        primary: "#1747A6",
+        accent: "#D62839",
         background: "#FFFFFF",
-        foreground: "#071C3F",
+        foreground: "#171C28",
         gray: {
           50: "#F9FAFB",
           100: "#F3F4F6",

@@ -30,6 +30,7 @@ class Lead(models.Model):
     message = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     is_processed = models.BooleanField(default=False)
+    notification_sent_at = models.DateTimeField(null=True, blank=True, editable=False)
 
     def __str__(self):
         return f"{self.name} - {self.company}"

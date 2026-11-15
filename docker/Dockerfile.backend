@@ -8,10 +8,8 @@ ENV PYTHONUNBUFFERED 1
 # Set work directory
 WORKDIR /app
 
-# Install dependencies
-RUN apt-get update && apt-get install -y \
-    libpq-dev \
-    gcc \
+# The entrypoint uses netcat to wait for PostgreSQL.
+RUN apt-get update && apt-get install -y --no-install-recommends netcat-openbsd \
     && rm -rf /var/lib/apt/lists/*
 
 COPY backend/requirements.txt .
@@ -19,9 +17,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
 COPY backend/ .
-
-# Install netcat for database check
-RUN apt-get update && apt-get install -y netcat-openbsd && rm -rf /var/lib/apt/lists/*
 
 # Make entrypoint executable
 RUN chmod +x entrypoint.sh

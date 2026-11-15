@@ -1,54 +1,48 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, ChartNoAxesCombined, ClipboardList, Code2, Workflow } from "lucide-react";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { PremiumCard } from "@/components/ui/Card";
-import { motion } from "framer-motion";
-import { Zap, Target, TrendingUp } from "lucide-react";
+import { PageIntro } from "@/components/layout/PageIntro";
 
-const solutions = [
-  {
-    title: "Digital Transformation",
-    impact: "From 100 Enrolments/Day to 100/Hour",
-    desc: "We engineer systems that eliminate manual friction. We transformed a bank's enrolment process from a full-day manual operation into an automated digital workflow that scales 10x faster.",
-    icon: Zap,
-  },
-  {
-    title: "AI & Intelligent Automation",
-    impact: "100% Supervisory Accuracy",
-    desc: "Our AI systems solve the 'human factor' problem. We built an examination platform that allows thousands of students to test remotely without supervision, yet ensures 0% cheating through intelligent monitoring.",
-    icon: Target,
-  },
-  {
-    title: "Decision Intelligence",
-    impact: "Real-Time Executive Visibility",
-    desc: "Stop managing through guesswork. We build dashboards that centralize data chaos, giving CEOs and stakeholders a single source of truth for every operational metric.",
-    icon: TrendingUp,
-  },
+export const metadata: Metadata = {
+  title: "Services | Datawizable",
+  description: "Business discovery, product engineering, data, and automation services from Datawizable.",
+};
+
+const services = [
+  { title: "Business discovery", text: "Understand processes, stakeholders, pain points, and priorities before committing to a solution.", outcome: "A grounded scope and clear next steps.", icon: ClipboardList },
+  { title: "Product engineering", text: "Design and build software around the work people need to do, from internal tools to customer-facing products.", outcome: "A maintainable system with a defined purpose.", icon: Code2 },
+  { title: "Workflow automation", text: "Identify repetitive handoffs and connect the systems and people involved in getting work done.", outcome: "Less manual friction and better visibility.", icon: Workflow },
+  { title: "Data and decision support", text: "Organize operational information into reporting and analysis that leaders can use with confidence.", outcome: "Useful information at the point of decision.", icon: ChartNoAxesCombined },
 ];
 
 export default function SolutionsPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="pt-48 pb-32 px-6">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-20">
-            <h1 className="text-6xl font-extrabold text-primary mb-6">Engineered Outcomes</h1>
-            <p className="text-xl text-gray-600 max-w-2xl">
-              We don't just build apps; we engineer business scaling. Our solutions are defined by the bottlenecks they remove.
-            </p>
+      <main>
+        <PageIntro eyebrow="Services / What we do" title="Work that connects business needs to useful technology." description="We help define the problem, design a practical response, and build the systems needed to support it." />
+        <section className="px-5 py-12 sm:px-8 sm:py-20">
+          <div className="mx-auto max-w-7xl">
+            {services.map((service, index) => {
+              const Icon = service.icon;
+              return (
+                <div key={service.title} className="grid gap-6 border-b border-gray-200 py-10 md:grid-cols-[0.25fr_1fr_1fr] md:gap-12">
+                  <div className="flex items-center gap-5 text-primary md:items-start"><span className="text-sm font-bold">0{index + 1}</span><Icon size={28} strokeWidth={1.7} aria-hidden="true" /></div>
+                  <h2 className="font-display text-2xl font-bold text-[#171C28] sm:text-3xl">{service.title}</h2>
+                  <div><p className="leading-relaxed text-gray-600">{service.text}</p><p className="mt-4 font-semibold text-primary">{service.outcome}</p></div>
+                </div>
+              );
+            })}
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {solutions.map((s) => (
-              <PremiumCard key={s.title} className="p-10">
-                <s.icon className="h-12 w-12 text-accent mb-6" />
-                <div className="text-sm font-bold text-accent uppercase tracking-widest mb-2">{s.impact}</div>
-                <h3 className="text-3xl font-bold text-primary mb-4">{s.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{s.desc}</p>
-              </PremiumCard>
-            ))}
+        </section>
+        <section className="bg-[#171C28] px-5 py-16 text-white sm:px-8">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6">
+            <h2 className="font-display text-2xl font-bold sm:text-4xl">Start with the challenge in front of you.</h2>
+            <Link href="/contact" className="inline-flex min-h-12 items-center gap-2 bg-white px-6 py-3 font-semibold text-[#171C28]">Discuss a project <ArrowRight size={18} /></Link>
           </div>
-        </div>
+        </section>
       </main>
       <Footer />
     </div>

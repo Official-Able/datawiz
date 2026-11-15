@@ -19,8 +19,8 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Datawizable | Decision Intelligence & Digital Transformation",
-  description: "We help organizations identify operational bottlenecks, redesign processes, and build intelligent digital systems that improve performance, efficiency, and growth.",
+  title: "Datawizable | Business Discovery & Digital Systems",
+  description: "We help organizations understand how work happens, define the right digital systems, and build them with purpose.",
 };
 
 export default function RootLayout({

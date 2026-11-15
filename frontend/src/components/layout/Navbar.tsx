@@ -1,125 +1,68 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/Button";
-import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { CampaignSlot } from "@/components/campaigns/CampaignSlot";
 
-const navItems = [
-  { name: "Solutions", href: "/solutions" },
-  { name: "Industries", href: "/industries" },
-  { name: "Case Studies", href: "/case-studies" },
-  { name: "Academy", href: "/academy" },
-  { name: "About", href: "/about" },
+const links = [
+  { label: "Services", href: "/solutions" },
+  { label: "Industries", href: "/industries" },
+  { label: "Discovery", href: "/discovery" },
+  { label: "Work", href: "/case-studies" },
+  { label: "Academy", href: "/academy" },
+  { label: "About", href: "/about" },
 ];
 
 export function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <nav
-      className={cn(
-        "fixed top-6 left-1/2 z-50 -translate-x-1/2",
-        "w-[92%] max-w-7xl",
-        "h-[78px]",
-        "rounded-full",
-        "bg-[#071C3F]/85",
-        "backdrop-blur-xl",
-        "border border-white/10",
-        "shadow-[0_20px_60px_rgba(0,0,0,0.25)]",
-        "transition-all duration-300",
-        isScrolled && "top-4 bg-[#071C3F]/95"
-      )}
-    >
-      <div className="flex h-full items-center justify-between px-2">
-        <Link href="/" className="flex items-center group h-full">
-          <div className="h-[58px] px-6 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:bg-white/25 group-hover:border-white/40 shadow-[0_0_15px_rgba(255,255,255,0.1)]">
-            <img
-              src="/logo.png"
-              alt="Datawizable"
-              className="h-10 md:h-12 w-auto object-contain transition-transform duration-500 group-hover:scale-[1.02] brightness-105"
-              style={{ minWidth: '120px' }}
-            />
-          </div>
-        </Link>
-
-        {/* Desktop Navigation - Centered */}
-        <div className="hidden flex-1 justify-center lg:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="relative text-[15px] font-semibold text-white/85 hover:text-white transition-all duration-300 group"
-            >
-              {item.name}
-              <span className="absolute -bottom-1 left-0 h-[2px] w-0 bg-accent transition-all duration-300 group-hover:w-full" />
-            </Link>
-          ))}
-        </div>
-
-        {/* Right Section - CTA */}
-        <div className="hidden lg:flex items-center">
-          <Link href="/contact">
-            <Button
-              className="h-11 px-8 rounded-full bg-[#E11D48] hover:bg-[#BE123C] text-white font-bold transition-all shadow-lg shadow-accent/20 border-none whitespace-nowrap"
-            >
-              Schedule Strategy Call
-            </Button>
+    <>
+      <CampaignSlot placement="site_banner" />
+      <header className="sticky top-0 z-50 border-b border-gray-200/80 bg-white/95 backdrop-blur-md">
+        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between gap-6 px-5 sm:px-8" aria-label="Main navigation">
+          <Link href="/" className="logo-frame" aria-label="Datawizable home">
+            <img src="/logo.png" alt="Datawizable" className="logo-frame-image" />
           </Link>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button
-          className="rounded-full bg-white/5 p-2 text-white transition-colors hover:bg-white/10 lg:hidden"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, scale: 0.98, y: -10 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.98, y: -10 }}
-            className="absolute left-0 right-0 top-[calc(100%+12px)] overflow-hidden rounded-[2rem] border border-white/10 bg-[#071C3F] p-8 shadow-2xl backdrop-blur-3xl lg:hidden"
+          <div className="hidden items-center gap-8 lg:flex">
+            {links.map((link) => (
+              <Link key={link.href} href={link.href} aria-current={pathname === link.href || pathname.startsWith(`${link.href}/`) ? "page" : undefined} className={`border-b-2 py-2 text-sm font-semibold transition-colors hover:text-primary ${pathname === link.href || pathname.startsWith(`${link.href}/`) ? "border-primary text-primary" : "border-transparent text-gray-700"}`}>
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <Link href="/contact" className="hidden bg-primary px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#0E3480] lg:inline-flex">
+            Discuss a project
+          </Link>
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center text-primary lg:hidden"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
+            onClick={() => setOpen((value) => !value)}
           >
-            <div className="flex flex-col gap-6 text-center">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="text-2xl font-bold text-white/90"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.name}
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </nav>
+        {open && (
+          <div id="mobile-navigation" className="border-t border-gray-200 bg-white px-5 pb-6 pt-3 lg:hidden">
+            <div className="mx-auto flex max-w-7xl flex-col">
+              {links.map((link) => (
+                <Link key={link.href} href={link.href} aria-current={pathname === link.href || pathname.startsWith(`${link.href}/`) ? "page" : undefined} onClick={() => setOpen(false)} className={`border-b border-gray-100 py-4 font-semibold ${pathname === link.href || pathname.startsWith(`${link.href}/`) ? "text-primary" : "text-gray-800"}`}>
+                  {link.label}
                 </Link>
               ))}
-              <div className="mt-4 flex flex-col gap-4 border-t border-white/10 pt-6">
-                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                    <Button className="w-full h-14 text-lg font-bold rounded-2xl bg-[#E11D48] border-none">
-                      Schedule Strategy Call
-                    </Button>
-                 </Link>
-              </div>
+              <Link href="/contact" onClick={() => setOpen(false)} className="mt-5 bg-primary px-5 py-3 text-center font-semibold text-white">
+                Discuss a project
+              </Link>
             </div>
-          </motion.div>
+          </div>
         )}
-      </AnimatePresence>
-    </nav>
+      </header>
+    </>
   );
 }

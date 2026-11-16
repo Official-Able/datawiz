@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # Wait for database to be ready
 if [ "$POSTGRES_DB" != "" ]; then

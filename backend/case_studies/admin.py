@@ -10,7 +10,7 @@ class CaseStudyAdmin(admin.ModelAdmin):
     list_editable = ("sort_order",)
     search_fields = ("title", "summary", "work_done")
     prepopulated_fields = {"slug": ("title",)}
-    readonly_fields = ("campaign_preview", "created_at", "updated_at")
+    readonly_fields = ("created_at", "updated_at")
     fieldsets = (
         ("Project", {"fields": ("title", "slug", "sector", "summary", "work_done", "outcome")}),
         ("Media and links", {"fields": ("cover_image_url", "project_url")}),
@@ -36,7 +36,7 @@ class CampaignAdmin(admin.ModelAdmin):
     list_filter = ("is_published", "placement")
     list_editable = ("is_published", "priority")
     search_fields = ("title", "eyebrow", "message")
-    readonly_fields = ("created_at", "updated_at")
+    readonly_fields = ("campaign_preview", "created_at", "updated_at")
     fieldsets = (
         ("Campaign content", {"fields": ("title", "eyebrow", "message", "image_url")}),
         ("Optional action", {"fields": ("cta_label", "cta_url")}),

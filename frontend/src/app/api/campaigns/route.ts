@@ -9,12 +9,17 @@ export async function GET() {
       cache: "no-store",
       signal: AbortSignal.timeout(5000),
     });
-    if (!response.ok) return NextResponse.json([], { status: 200 });
+    if (!response.ok) {
+      return NextResponse.json({ error: "Campaign service unavailable" }, { status: 502 });
+    }
     const data: unknown = await response.json();
-    return NextResponse.json(Array.isArray(data) ? data : [], {
+    if (!Array.isArray(data)) {
+      return NextResponse.json({ error: "Invalid campaign response" }, { status: 502 });
+    }
+    return NextResponse.json(data, {
       headers: { "Cache-Control": "no-store" },
     });
   } catch {
-    return NextResponse.json([], { status: 200 });
+    return NextResponse.json({ error: "Campaign service unavailable" }, { status: 502 });
   }
 }

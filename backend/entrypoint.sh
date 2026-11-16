@@ -4,7 +4,7 @@ set -e
 # Wait for database to be ready
 if [ "$POSTGRES_DB" != "" ]; then
     echo "Waiting for postgres..."
-    while ! nc -z $POSTGRES_HOST $POSTGRES_PORT; do
+    while ! nc -z "${POSTGRES_HOST:-db}" "${POSTGRES_PORT:-5432}"; do
       sleep 0.1
     done
     echo "PostgreSQL started"
